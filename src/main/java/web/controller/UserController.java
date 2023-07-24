@@ -21,13 +21,13 @@ public class UserController {
 
 
     @GetMapping(value = "/")
-    public String printWelcome(ModelMap model) {
+    public String allUsers(ModelMap model) {
         model.addAttribute("users", userService.getAllUsers());
         return "users";
     }
 
     @GetMapping(value =  "/{id}")
-    public String user(@PathVariable("id") int id,
+    public String User(@PathVariable("id") int id,
                              ModelMap model) {
     return userService.getUserById(id).map(user -> {
                 model.addAttribute("user", user);

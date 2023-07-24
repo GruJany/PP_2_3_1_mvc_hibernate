@@ -2,23 +2,15 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Cars</title>
+    <title>Users</title>
 </head>
 <body>
 <h1>Users List</h1>
 <div>
-    <table th:border="1">
-        <tr>
-            <th>Name</th>
-            <th>Surname</th>
-            <th>Age</th>
-        </tr>
-        <tr th:each="car : ${cars}">
-            <td th:utext="${car.getModel()}"></td>
-            <td th:utext="${car.getSeries()}"></td>
-            <td th:utext="${car.getColor()}"></td>
-        </tr>
-    </table>
+    <h5><a href="/create">click to add new user</a></h5>
+</div>
+<div th:each="user : ${users}">
+    <a href="@{'/users/' + ${user.getId}}" th:text="|${user.id}. ${user.getName()}|">User</a>
 </div>
 </body>
 </html>
