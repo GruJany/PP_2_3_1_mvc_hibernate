@@ -1,6 +1,5 @@
 package web.dao;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import web.entity.User;
 
@@ -10,14 +9,9 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public class UserDaoImpl implements UserDao{
+public class UserDaoImpl implements UserDao {
     @PersistenceContext
     private EntityManager entityManager;
-
-    @Autowired
-    public UserDaoImpl(EntityManager entityManager) {
-        this.entityManager = entityManager;
-    }
 
     @Override
     public void addUser(User user) {
@@ -32,7 +26,7 @@ public class UserDaoImpl implements UserDao{
 
     @Override
     public List<User> getAllUsers() {
-        return entityManager.createQuery( "from User", User.class).getResultList();
+        return entityManager.createQuery("Select u from User u", User.class).getResultList();
     }
 
     @Override

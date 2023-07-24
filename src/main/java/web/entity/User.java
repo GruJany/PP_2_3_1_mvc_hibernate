@@ -3,26 +3,20 @@ package web.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "users")
+@Table(name = "allUsers")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Column(columnDefinition = "varchar(255) default 'Anonim'")
     private String name;
+    @Column
     private String surname;
+    @Column
     private int age;
 
     public User() {
-
     }
-
-    public User(int id, String name, String surname, int age) {
-        this.id = id;
-        this.name = name;
-        this.surname = surname;
-        this.age = age;
-    }
-
     public int getId() {
         return id;
     }

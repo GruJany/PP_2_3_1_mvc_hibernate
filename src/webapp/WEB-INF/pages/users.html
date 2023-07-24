@@ -5,12 +5,13 @@
     <title>Users</title>
 </head>
 <body>
-<h1>Users List</h1>
 <div>
-    <h5><a href="/create">click to add new user</a></h5>
+    <h3><a href="/create">click to add new user</a></h3>
+    <h2>Users List:</h2>
 </div>
 <div th:each="user : ${users}">
-    <a href="@{'/users/' + ${user.getId}}" th:text="|${user.id}. ${user.getName()}|">User</a>
+    <h3><a th:href="@{'/' + ${user.id}}" th:text="|${user.id}. ${user.getName()}|">Users</a>
+    </h3>
 </div>
 </body>
 </html>
