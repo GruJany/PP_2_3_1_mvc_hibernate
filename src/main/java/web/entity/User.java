@@ -8,7 +8,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(columnDefinition = "varchar(255) default 'Anonim'")
+    @Column
     private String name;
     @Column
     private String surname;
